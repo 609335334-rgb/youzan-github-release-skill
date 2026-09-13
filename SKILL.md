@@ -14,7 +14,7 @@ metadata:
 ## 发布流程
 
 1. 读取 main.py 与 info.json 的版本，确认目标语义版本更高。
-2. 运行 scripts/prepare_release.py prepare。它在临时目录测试、构建 ZIP、生成 SHA-256 和 manifest.json，不修改插件源码。
+2. 运行 prepare_release.py prepare。它在临时目录测试、构建 ZIP、生成 SHA-256 和 manifest.json，不修改插件源码。
 3. 上传公开仓库前，明确确认将上传 ZIP、main.py、info.json、README.md（如有）和 manifest.json。
 4. 使用已登录的 GitHub 浏览器会话上传，先提交 ZIP 与版本化源文件，最后提交 manifest.json。
 5. 核验远端 manifest、下载包和 SHA-256 后，才运行 finalize 同步本地 main.py、info.json 与测试版本断言。
@@ -23,7 +23,7 @@ metadata:
 
 ~~~powershell
 & 'E:\字字动画\_internal\python-3.12\python.exe' \
-  'C:\Users\ASUS\.codex\skills\youzan-github-release\scripts\prepare_release.py' \
+  'C:\Users\ASUS\.codex\skills\youzan-github-release\prepare_release.py' \
   prepare --plugin-dir 'E:\字字动画\_internal\plugins\video_plugins\video_plugin_youzan_aigc' \
   --version <version> --changelog <changelog>
 ~~~
